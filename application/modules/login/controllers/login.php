@@ -2,6 +2,7 @@
 
 /**
  * Controla el acceso a la aplicacion principal
+ *
  * @author 	N. Alberto Mendoza
  * @author 	https://twitter.com/#!/_n3ri_
  * @todo 	encriptar clave
@@ -33,14 +34,12 @@ class Login extends CI_Controller {
  	public function validate($user=NULL, $pass=NULL){
  		$user = $this->input->post('user', TRUE);
  		$pass = $this->input->post('pass', TRUE);
- 		$this->load->model('Login_Model');
- 		$stat = $this->Login_Model->match_data($user, $pass);
  		
- 		if( $stat == TRUE ){
- 			$this->session->set_userdata('logged_in','TRUE');
- 			redirect('/home/');
+ 		$status = $this->guardian->login($user, $pass);
+ 		if( $status == TRUE ){
+ 			redirect('home'); 			
  		} else {
- 			redirect('');
+ 			redirect(''); 			
  		}
  	}
 
@@ -48,8 +47,8 @@ class Login extends CI_Controller {
  	 * Termina la sesion de usuario
  	 */
  	public function logout(){
- 		$this->session->sess_destroy();
- 		redirect('');
+ 		$this->guardian->logout();
+ 		redirect(''); 		
  	}
 
 }
