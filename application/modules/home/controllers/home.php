@@ -2,6 +2,7 @@
 
 /**
  * Seccion principal de sistema
+ *
  * @author 	N. Alberto Mendoza
  * @author 	https://twitter.com/#!/_n3ri_
  */
