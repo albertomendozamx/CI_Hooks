@@ -2,6 +2,7 @@
 
 /**
  * Valida credenciales de sistema
+ *
  * @author 	N. Alberto Mendoza
  * @author 	https://twitter.com/#!/_n3ri_
  */
@@ -16,6 +17,7 @@ class Login_Model extends CI_Model {
 
   /**
    * Comprueba la existencia de los datos ingresados por el usuario
+   *
    * @param 	string 	usuario de sistema
    * @param 	string 	clave de usuario
    * @return 	bool 	TRUE si los datos coinciden
